@@ -11,7 +11,6 @@ namespace tree
         List<Member> myMembers = new List<Member>();
         public void Run()
         {
-            
             var mamber = new Member("Larry", "Smit", new DateTime(1, 2, 3));
             var Larry = new Member("Alex", "Smit", new DateTime(1, 2, 3));
             var Marry = new Member("Tom", "", new DateTime(1, 2, 3));
