@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//namespace tree
-////{
-////    class Famaly
-////    {
-////        public string MyProperty { get; set; }
-////        public Famaly(Member x, Member y)
-////        {
-
-////        }
-////        public static Member operator +(Member x, Member y)
-////        {
-////            return new Famaly();
-////        }
-////    }
-////}
+namespace tree
+{
+   public  class Famaly
+    {
+        public string NameFamaly { get; private set; }
+        public Famaly(Member member1, Member member2)
+        {
+            NameFamaly = $"{member1.LastName} and {member2.LastName}";
+        }
+    }
+}

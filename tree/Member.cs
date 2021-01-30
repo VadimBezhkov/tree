@@ -33,5 +33,19 @@ namespace tree
         {
             Clildrens.Add(myMember);
         }
+
+        public void AddFather(Member myMember)
+        {
+            ParentDad = myMember;
+        }
+        public void AddMother(Member myMember)
+        {
+            ParentMom= myMember;
+        }
+
+        public static Famaly operator +(Member member1, Member member2)
+        {
+            return new Famaly (member1, member2);
+        }
     }
 }
