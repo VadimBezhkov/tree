@@ -22,7 +22,8 @@ namespace tree
             var Foxy = new Member("Bob", "2", new DateTime(1, 2, 3));
             var Foxy2 = new Member("Sonya", "2", new DateTime(1, 2, 3));
             var Charly = new Member(Foxy,Lia, "Charly", "2", new DateTime(1, 2, 3));
-
+            var famaly = Larry + Marry;
+            var famaly2 = Marry3 + Marry4;
             myMembers.AddRange(new List<Member> { mamber, Larry, Marry2,Lia });
             mamber.AddChildren(Charly);
             
