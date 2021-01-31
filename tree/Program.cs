@@ -23,7 +23,7 @@ namespace tree
             var Foxy2 = new Member("Sonya", "2", new DateTime(1, 2, 3));
             var Charly = new Member(Foxy, Lia, "Charly", "2", new DateTime(1, 2, 3));
             var famaly2 = Marry3 + Marry4;
-            
+
             myMembers.AddRange(new List<Member> { mamber, Larry, Marry2, Lia, Marry,
                 Marry3, Marry4, Larry2, Foxy, Foxy2, Charly });
 
@@ -82,16 +82,14 @@ namespace tree
         }
         static void Main(string[] args)
         {
-            bool isContinue = true;
+            Program pro = new Program();
+            pro.Run();
             while (true)
             {
-                Program pro = new Program();
-                pro.Run();
-
                 Console.WriteLine("Enter 1 more relative- press eny 1");
                 Console.WriteLine("Exit the program -press 2");
                 string chose = Console.ReadLine();
-
+                bool isContinue = true;
 
                 switch (chose)
                 {
@@ -126,7 +124,7 @@ namespace tree
                                     Console.Clear();
                                     pro.ShowTree();
                                 }
-                                else 
+                                else
                                 {
                                     Console.Clear();
                                     pro.ShowTree();
@@ -135,9 +133,8 @@ namespace tree
                                 Console.WriteLine("continue yes? no- press eny key?");
                                 if (Console.ReadLine() != "yes")
                                 {
-                                    Console.Clear();
                                     isContinue = false;
-                                  
+
                                 }
                                 else
                                 {
