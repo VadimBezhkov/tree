@@ -179,6 +179,10 @@ namespace tree
                                 if (memb != null)
                                 {
                                     pro.myMembers.Remove(memb);
+                                    foreach (var curMember in pro.myMembers.Where(m => m.Clildrens.Contains(memb)))
+                                    {
+                                        curMember.Clildrens.Remove(memb);
+                                    }
                                     pro.ShowTree();
                                     break;
                                 }
