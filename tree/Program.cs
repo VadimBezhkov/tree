@@ -87,7 +87,8 @@ namespace tree
             while (true)
             {
                 Console.WriteLine("Enter 1 more relative- press eny 1");
-                Console.WriteLine("Exit the program -press 2");
+                Console.WriteLine("Delite - press eny 2");
+                Console.WriteLine("Exit the program -press 3");
                 string chose = Console.ReadLine();
                 bool isContinue = true;
 
@@ -145,19 +146,42 @@ namespace tree
                             break;
                         }
 
-                    case "2":
+                    case "3":
                         {
                             Console.WriteLine("Exit programm - y; No exit programm - n");
                             var result = Console.ReadLine();
                             if (result == "y")
                             {
-                                //Environment.Exit(0);
+                                Environment.Exit(0);
                                 isContinue = false;
                             }
                             else
                             {
                                 Console.Clear();
                                 break;
+                            }
+                            break;
+                        }
+
+                    case "2":
+                        {
+                            Console.WriteLine("Enter Last Name:");
+                            string parentName = Console.ReadLine();
+                            Member memb = null;
+                            foreach (var item in pro.myMembers)
+                            {
+                                if (item.LastName == parentName)
+                                
+                                    {
+                                        memb = item;
+                                    }
+
+                                if (memb != null)
+                                    {
+                                        pro.myMembers.Remove(memb);
+                                        pro.ShowTree();
+                                        break;
+                                    }
                             }
 
                             break;
