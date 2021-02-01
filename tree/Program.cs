@@ -171,17 +171,17 @@ namespace tree
                             foreach (var item in pro.myMembers)
                             {
                                 if (item.LastName == parentName)
-                                
-                                    {
-                                        memb = item;
-                                    }
+
+                                {
+                                    memb = item;
+                                }
 
                                 if (memb != null)
-                                    {
-                                        pro.myMembers.Remove(memb);
-                                        pro.ShowTree();
-                                        break;
-                                    }
+                                {
+                                    pro.myMembers.Remove(memb);
+                                    pro.ShowTree();
+                                    break;
+                                }
                             }
 
                             break;
