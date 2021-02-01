@@ -37,7 +37,7 @@ namespace tree
             return parentName;
         }
         List<Member> myMembers = new List<Member>();
-        public void Run()
+        public void MyColecction()
         {
             var mamber = new Member("Larry", "Smit", new DateTime(1, 2, 3));
             var Larry = new Member("Alex", "Smit", new DateTime(1, 2, 3));
@@ -56,7 +56,6 @@ namespace tree
                 Marry3, Marry4, Larry2, Foxy, Foxy2, Charly });
 
             mamber.AddChildren(Charly);
-
             mamber.AddChildren(Larry);
             mamber.AddChildren(Larry2);
 
@@ -74,6 +73,7 @@ namespace tree
             Lia.AddChildren(Foxy2);
 
             ShowTree(mamber, 0);
+            
         }
 
         void ShowTree(Member myMember = null, int Level = 0)
@@ -112,8 +112,7 @@ namespace tree
         static void Main(string[] args)
         {
             Program pro = new Program();
-            pro.Run();
-            Member x = null;
+            pro.MyColecction();
             string parentName;
             while (true)
             {
@@ -148,6 +147,7 @@ namespace tree
                                     Console.Clear();
                                     pro.ShowTree();
                                 }
+
                                 else
                                 {
                                     Console.Clear();
@@ -160,6 +160,7 @@ namespace tree
                                     isContinue = false;
 
                                 }
+
                                 else
                                 {
                                     Console.Clear();
@@ -167,31 +168,15 @@ namespace tree
                                 }
                             }
                             break;
-                        }
 
-                    case "3":
-                        {
-                            Console.WriteLine("Exit programm - y; No exit programm - n");
-                            var result = Console.ReadLine();
-                            if (result == "y")
-                            {
-                                Environment.Exit(0);
-                                isContinue = false;
-                            }
-                            else
-                            {
-                                Console.Clear();
-                                break;
-                            }
-                            break;
                         }
-
                     case "2":
                         {
-                            parentName= pro.DeleteMember();
+                            parentName = pro.DeleteMember();
                             Member memb = null;
                             foreach (var item in pro.myMembers)
                             {
+
                                 if (item.LastName == parentName)
 
                                 {
@@ -209,8 +194,25 @@ namespace tree
                                     break;
                                 }
                             }
-
                             break;
+
+                        }
+                    case "3":
+                        {
+                            Console.WriteLine("Exit programm - y; No exit programm - n");
+                            var result = Console.ReadLine();
+                            if (result == "y")
+                            {
+                                Environment.Exit(0);
+                                isContinue = false;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                break;
+                            }
+                            break;
+
                         }
                     default:
                         {

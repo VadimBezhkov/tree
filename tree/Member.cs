@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace tree
 {
-    public class Member : Person
+    public partial class Member : Person
     {
         public Member ParentDad { get; set; }
         public Member ParentMom { get; set; }
         public List<Member> Clildrens { get; private set; }
+        public Member()
+        {
 
-        public Member(string lastName, string firstName) :base (lastName,firstName)
+        }
+        public Member(string lastName, string firstName) : base(lastName, firstName)
         {
             Clildrens = new List<Member>();
         }
@@ -27,25 +30,6 @@ namespace tree
         {
             ParentDad = Dad;
             ParentMom = Mom;
-        }
-
-        public void AddChildren(Member myMember)
-        {
-            Clildrens.Add(myMember);
-        }
-
-        public void AddFather(Member myMember)
-        {
-            ParentDad = myMember;
-        }
-        public void AddMother(Member myMember)
-        {
-            ParentMom= myMember;
-        }
-
-        public static Famaly operator +(Member member1, Member member2)
-        {
-            return new Famaly (member1, member2);
         }
     }
 }

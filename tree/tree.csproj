@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Famaly.cs" />
     <Compile Include="Member.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="MemberMetods.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
