@@ -8,6 +8,34 @@ namespace tree
 {
     class Program
     {
+       public void Print ()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine();
+            Console.WriteLine("Enter 1 more relative- press eny 1");
+            Console.WriteLine("Delite - press eny 2");
+            Console.WriteLine("Exit the program -press 3");
+            Console.ResetColor();
+        }
+        public (string,Member) SearchMemberInfo()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Enter lastName");
+            string lName = Console.ReadLine();
+            Console.WriteLine("Enter firstName");
+            string fName = Console.ReadLine();
+            Console.WriteLine("Enter the first name of parent");
+            string parentName = Console.ReadLine();
+            Console.ResetColor();
+            (string, Member) t = (parentName, new Member(lName, fName));
+            return t;
+        }
+        public string DeleteMember()
+        {
+            Console.WriteLine("Enter Last Name:");
+            string parentName = Console.ReadLine();
+            return parentName;
+        }
         List<Member> myMembers = new List<Member>();
         public void Run()
         {
@@ -47,6 +75,7 @@ namespace tree
 
             ShowTree(mamber, 0);
         }
+
         void ShowTree(Member myMember = null, int Level = 0)
         {
             if (myMember == null)
@@ -84,11 +113,11 @@ namespace tree
         {
             Program pro = new Program();
             pro.Run();
+            Member x = null;
+            string parentName;
             while (true)
             {
-                Console.WriteLine("Enter 1 more relative- press eny 1");
-                Console.WriteLine("Delite - press eny 2");
-                Console.WriteLine("Exit the program -press 3");
+                pro.Print();
                 string chose = Console.ReadLine();
                 bool isContinue = true;
 
@@ -98,16 +127,10 @@ namespace tree
                         {
                             while (isContinue)
                             {
-                                Console.WriteLine("Enter lastName");
-                                string lName = Console.ReadLine();
-                                Console.WriteLine("Enter firstName");
-                                string fName = Console.ReadLine();
-                                var x = new Member(lName, fName);
-                                Console.WriteLine("Enter the first name of parent");
-                                string parentName = Console.ReadLine();
+                                var ParentName= pro.SearchMemberInfo();
+                                parentName = ParentName.Item1;
 
                                 //var foundParent = pro.myMembers.FirstOrDefault(m => m.LastName == parentName);
-
                                 Member foundParent = null;
                                 foreach (var memb in pro.myMembers)
                                 {
@@ -120,8 +143,8 @@ namespace tree
 
                                 if (foundParent != null)
                                 {
-                                    foundParent.AddChildren(x);
-                                    pro.myMembers.Add(x);
+                                    foundParent.AddChildren(ParentName.Item2);
+                                    pro.myMembers.Add(ParentName.Item2);
                                     Console.Clear();
                                     pro.ShowTree();
                                 }
@@ -165,8 +188,7 @@ namespace tree
 
                     case "2":
                         {
-                            Console.WriteLine("Enter Last Name:");
-                            string parentName = Console.ReadLine();
+                            parentName= pro.DeleteMember();
                             Member memb = null;
                             foreach (var item in pro.myMembers)
                             {
