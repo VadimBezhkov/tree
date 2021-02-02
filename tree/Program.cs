@@ -55,6 +55,11 @@ namespace tree
             myMembers.AddRange(new List<Member> { mamber, Larry, Marry2, Lia, Marry,
                 Marry3, Marry4, Larry2, Foxy, Foxy2, Charly });
 
+            DateTime data = new DateTime(10,12,1988);
+            Foxy = data;
+            Console.WriteLine(data);
+
+
             Member GoodsOfWar = "Cratos Good 10,10,2001";
             Member Lesha = ("Zlotnikov", "Lesha", new DateTime(1993, 11, 11));
 
