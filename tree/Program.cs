@@ -8,7 +8,8 @@ namespace tree
 {
     class Program
     {
-       public void Print ()
+        //Menu Tex
+        public void Print ()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
@@ -19,6 +20,7 @@ namespace tree
         }
         public (string,Member) SearchMemberInfo()
         {
+            // The return of a new child
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Enter lastName");
             string lName = Console.ReadLine();
@@ -30,12 +32,15 @@ namespace tree
             (string, Member) t = (parentName, new Member(lName, fName));
             return t;
         }
+        //Info delete member
         public string DeleteMember()
         {
             Console.WriteLine("Enter Last Name:");
             string parentName = Console.ReadLine();
             return parentName;
         }
+
+        // create collecction
         List<Member> myMembers = new List<Member>();
         public void MyColecction()
         {
@@ -80,7 +85,7 @@ namespace tree
             ShowTree(mamber, 0);
             
         }
-
+        //tree output method
         void ShowTree(Member myMember = null, int Level = 0)
         {
             if (myMember == null)
@@ -127,6 +132,7 @@ namespace tree
 
                 switch (chose)
                 {
+                    //add new member
                     case "1":
                         {
                             while (isContinue)
@@ -177,6 +183,7 @@ namespace tree
                             break;
 
                         }
+                        // delete member
                     case "2":
                         {
                             parentName = pro.DeleteMember();
@@ -205,6 +212,7 @@ namespace tree
                             break;
 
                         }
+                        //exit the programm
                     case "3":
                         {
                             Console.WriteLine("Exit programm - y; No exit programm - n");

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace tree
 {
+    /// <summary>
+    /// Create partial class Member 
+    /// constructors and property
+    /// </summary>
     public partial class Member : Person
     {
         public Member ParentDad { get; set; }

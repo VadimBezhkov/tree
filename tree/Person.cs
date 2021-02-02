@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace tree
 {
+    // Create abstract class Person
     abstract public class Person
     {
         public string LastName { get; private set; }
@@ -17,10 +18,6 @@ namespace tree
             set { _dateOfBirth = value; }
         }
         private DateTime _dateOfBirth;
-        public Person()
-        {
-
-        }
         public Person(string lastName, string firstName)
         {
             LastName = lastName;
@@ -30,7 +27,9 @@ namespace tree
         {
             DateOfBirth = dateOfBirth;
         }
-
+        /// <summary>
+        ///  Same behavior as overridden method ToString
+        /// </summary>
         public virtual void Info()
         {
             Console.WriteLine($"Name:{LastName} {FirstName} Birthday {DateOfBirth}");
