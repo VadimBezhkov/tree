@@ -57,6 +57,9 @@ namespace tree
 
             Member GoodsOfWar = "Cratos Good 10,10,2001";
             Member Lesha = ("Zlotnikov", "Lesha", new DateTime(1993, 11, 11));
+
+            string name = Lesha;
+
             mamber.AddChildren(Charly);
             mamber.AddChildren(Larry);
             mamber.AddChildren(Larry2);

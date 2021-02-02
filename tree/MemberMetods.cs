@@ -52,5 +52,13 @@ namespace tree
                 throw new ArgumentException("Erorrs DataofBirtch");
             }
         }
+        public static implicit operator string(Member memb)
+        {
+            return $"{memb.LastName} {memb.FirstName} {memb.DateOfBirth}";
+        }
+        public override string ToString()
+        {
+            return $"{LastName} {FirstName} {DateOfBirth}";
+        }
     }
 }
