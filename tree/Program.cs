@@ -16,6 +16,7 @@ namespace tree
             Console.WriteLine("Enter 1 more relative- press eny 1");
             Console.WriteLine("Delite - press eny 2");
             Console.WriteLine("Exit the program -press 3");
+            Console.WriteLine("DELETE ALEXEY -press 4 :)!!!");
             Console.ResetColor();
         }
         public (string,Member) SearchMemberInfo()
@@ -56,18 +57,19 @@ namespace tree
             var Foxy2 = new Member("Sonya", "2", new DateTime(1, 2, 3));
             var Charly = new Member(Foxy, Lia, "Charly", "2", new DateTime(1, 2, 3));
             var famaly2 = Marry3 + Marry4;
-
+            var Teacher = new Member("Alexey", "Lobachev", new DateTime(1985, 06, 24));
             myMembers.AddRange(new List<Member> { mamber, Larry, Marry2, Lia, Marry,
-                Marry3, Marry4, Larry2, Foxy, Foxy2, Charly });
+                Marry3, Marry4, Larry2, Foxy, Foxy2, Charly ,Teacher});
 
             Member GoodsOfWar = "Cratos Good 10,10,2001";
             Member Lesha = ("Zlotnikov", "Lesha", new DateTime(1993, 11, 11));
-
+   
             string name = Lesha;
 
             mamber.AddChildren(Charly);
             mamber.AddChildren(Larry);
             mamber.AddChildren(Larry2);
+            mamber.AddChildren(Teacher);
 
             Larry2.AddChildren(Marry);
             Larry2.AddChildren(Marry2);
@@ -231,6 +233,26 @@ namespace tree
                             break;
 
                         }
+                    case "4":
+                        {
+                            Member memb = null;
+                            foreach (var item in pro.myMembers)
+                            {
+
+                                if(item.LastName=="Alexey")
+                                {
+                                    memb = item;
+                                }
+
+                                if (memb != null)
+                                {
+                                    throw new Exception("Ha ha ha !!! You can't remove the teacher ah yay yay!");
+                                }
+                            }
+                            pro.ShowTree();
+                            break;
+                        }
+
                     default:
                         {
                             Console.Clear();
