@@ -41,6 +41,7 @@ namespace tree
                 throw new ArgumentException("Erorrs DataofBirtch");
             }
         }
+
         public static implicit operator Member ((string lastname, string firstname, DateTime date) test)
         {
             if (!string.IsNullOrEmpty(test.firstname) && !string.IsNullOrEmpty(test.lastname))
@@ -52,10 +53,12 @@ namespace tree
                 throw new ArgumentException("Erorrs DataofBirtch");
             }
         }
+
         public static implicit operator string(Member memb)
         {
             return $"{memb.LastName} {memb.FirstName} {memb.DateOfBirth}";
         }
+
         public override string ToString()
         {
             return $"{LastName} {FirstName} {DateOfBirth}";

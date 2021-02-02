@@ -30,10 +30,10 @@ namespace tree
         {
             DateOfBirth = dateOfBirth;
         }
+
         public virtual void Info()
         {
             Console.WriteLine($"Name:{LastName} {FirstName} Birthday {DateOfBirth}");
         }
-
     }
 }

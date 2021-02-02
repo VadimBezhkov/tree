@@ -55,11 +55,6 @@ namespace tree
             myMembers.AddRange(new List<Member> { mamber, Larry, Marry2, Lia, Marry,
                 Marry3, Marry4, Larry2, Foxy, Foxy2, Charly });
 
-            DateTime data = new DateTime(10,12,1988);
-            Foxy = data;
-            Console.WriteLine(data);
-
-
             Member GoodsOfWar = "Cratos Good 10,10,2001";
             Member Lesha = ("Zlotnikov", "Lesha", new DateTime(1993, 11, 11));
 
@@ -109,6 +104,7 @@ namespace tree
 
             foreach (var item in myMember.Clildrens)
             {
+
                 for (int i = 0; i < Level; i++)
                 {
                     Console.Write("   ");
@@ -117,7 +113,6 @@ namespace tree
                 Console.Write("|---");
                 ShowTree(item, Level);
             }
-
         }
         static void Main(string[] args)
         {
@@ -141,6 +136,7 @@ namespace tree
 
                                 //var foundParent = pro.myMembers.FirstOrDefault(m => m.LastName == parentName);
                                 Member foundParent = null;
+
                                 foreach (var memb in pro.myMembers)
                                 {
                                     if (memb.LastName == parentName)
@@ -165,6 +161,7 @@ namespace tree
                                 }
 
                                 Console.WriteLine("continue yes? no- press eny key?");
+
                                 if (Console.ReadLine() != "yes")
                                 {
                                     isContinue = false;
@@ -184,6 +181,7 @@ namespace tree
                         {
                             parentName = pro.DeleteMember();
                             Member memb = null;
+
                             foreach (var item in pro.myMembers)
                             {
 
@@ -211,6 +209,7 @@ namespace tree
                         {
                             Console.WriteLine("Exit programm - y; No exit programm - n");
                             var result = Console.ReadLine();
+
                             if (result == "y")
                             {
                                 Environment.Exit(0);
