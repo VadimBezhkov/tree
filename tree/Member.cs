@@ -11,10 +11,6 @@ namespace tree
         public Member ParentDad { get; set; }
         public Member ParentMom { get; set; }
         public List<Member> Clildrens { get; private set; }
-        public Member()
-        {
-
-        }
         public Member(string lastName, string firstName) : base(lastName, firstName)
         {
             Clildrens = new List<Member>();

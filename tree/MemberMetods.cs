@@ -27,9 +27,30 @@ namespace tree
             return new Famaly(member1, member2);
         }
 
-        public static implicit operator Member(DateTime data)
+        public static implicit operator Member(string member)
         {
-            return new Member { DateOfBirth = data };
+           if(!string.IsNullOrEmpty(member))
+            {
+                var date = member.Split(' ');
+                DateTime time;
+                var result = DateTime.TryParse(date[2], out time);
+                return new Member(date[0], date[1], time);
+            }
+            else 
+            {
+                throw new ArgumentException("Erorrs DataofBirtch");
+            }
+        }
+        public static implicit operator Member ((string lastname, string firstname, DateTime date) test)
+        {
+            if (!string.IsNullOrEmpty(test.firstname) && !string.IsNullOrEmpty(test.lastname))
+            {
+                return new Member(test.lastname, test.firstname, test.date);
+            }
+            else 
+            {
+                throw new ArgumentException("Erorrs DataofBirtch");
+            }
         }
     }
 }
